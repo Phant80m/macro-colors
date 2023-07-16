@@ -1,3 +1,4 @@
+# Discontinued! Due to Trait issues
 # macro_colors
 Super simple rust color macros!
 Custom Macros for Colored Printing
