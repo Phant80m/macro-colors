@@ -1,65 +1,97 @@
-# macro-colors
+# macro_colors
 Super simple rust color macros!
 Custom Macros for Colored Printing
 
 These macros are custom printing macros designed to make terminal output colorful and stylized. They are helpful for adding colors, bold, and italic styles to printed text.
 
-Text Color Macros:
+Traits Colorize:
+- Works on `Strings`, `mut &str`, and `&str` 
+```rs
+.bold()
+.italic()
+.black()
+.red()
+.yellow()
+.blue()
+.magenta()
+.cyan()
+.white()
+.bright_black()
+.bright_red()
+.bright_yellow()
+.bright_blue()
+.bright_magenta()
+.bright_cyan()
+.bright_white()
+.on_black()
+.on_red()
+.on_yellow()
+.on_blue()
+.on_magenta()
+.on_cyan()
+.on_white()
+```
 
-- red_println!("Example text"): Prints text in red color.
-- green_println!("Example text"): Prints text in green color.
-- yellow_println!("Example text"): Prints text in yellow color.
-- blue_println!("Example text"): Prints text in blue color.
-- purple_println!("Example text"): Prints text in purple color.
-- cyan_println!("Example text"): Prints text in cyan color.
-- white_println!("Example text"): Prints text in white color.
-
+Text color Macros:
+```rs
+ red_println!("Example text")
+ green_println!("Example text")
+ yellow_println!("Example text")
+ blue_println!("Example text")
+ purple_println!("Example text")
+ cyan_println!("Example text")
+ white_println!("Example text")
+```
 Bold Text Color Macros:
 
-- bold_red_println!("Example text"): Prints text in bold red color.
-- bold_green_println!("Example text"): Prints text in bold green color.
-- bold_yellow_println!("Example text"): Prints text in bold yellow color.
-- bold_blue_println!("Example text"): Prints text in bold blue color.
-- bold_purple_println!("Example text"): Prints text in bold purple color.
-- bold_cyan_println!("Example text"): Prints text in bold cyan color.
-- bold_white_println!("Example text"): Prints text in bold white color.
-
+```rs
+ bold_red_println!("Example text")
+ bold_green_println!("Example text")
+ bold_yellow_println!("Example text")
+ bold_blue_println!("Example text")
+ bold_purple_println!("Example text")
+ bold_cyan_println!("Example text")
+ bold_white_println!("Example text")
+```
 Italic Text Color Macros:
-
-- italic_red_println!("Example text"): Prints text in italic red color.
-- italic_green_println!("Example text"): Prints text in italic green color.
-- italic_yellow_println!("Example text"): Prints text in italic yellow color.
-- italic_blue_println!("Example text"): Prints text in italic blue color.
-- italic_purple_println!("Example text"): Prints text in italic purple color.
-- italic_cyan_println!("Example text"): Prints text in italic cyan color.
-- italic_white_println!("Example text"): Prints text in italic white color.
-
+```rs
+ italic_red_println!("Example text")
+ italic_green_println!("Example text")
+ italic_yellow_println!("Example text")
+ italic_blue_println!("Example text")
+ italic_purple_println!("Example text")
+ italic_cyan_println!("Example text")
+ italic_white_println!("Example text")
+```
 Bold and Italic Text Color Macros:
-
-- bold_italic_red_println!("Example text"): Prints text in bold and italic red color.
-- bold_italic_green_println!("Example text"): Prints text in bold and italic green color.
-- bold_italic_yellow_println!("Example text"): Prints text in bold and italic yellow color.
-- bold_italic_blue_println!("Example text"): Prints text in bold and italic blue color.
-- bold_italic_purple_println!("Example text"): Prints text in bold and italic purple color.
-- bold_italic_cyan_println!("Example text"): Prints text in bold and italic cyan color.
-- bold_italic_white_println!("Example text"): Prints text in bold and italic white color.
-
+```rs
+ bold_italic_red_println!("Example text")
+ bold_italic_green_println!("Example text")
+ bold_italic_yellow_println!("Example text")
+ bold_italic_blue_println!("Example text")
+ bold_italic_purple_println!("Example text")
+ bold_italic_cyan_println!("Example text")
+ bold_italic_white_println!("Example text")
+```
 Background Color Macros:
-
-- bg_red_println!("Example text"): Prints text with a red background.
-- bg_green_println!("Example text"): Prints text with a green background.
-- bg_yellow_println!("Example text"): Prints text with a yellow background.
-- bg_blue_println!("Example text"): Prints text with a blue background.
-- bg_purple_println!("Example text"): Prints text with a purple background.
-- bg_cyan_println!("Example text"): Prints text with a cyan background.
-- bg_white_println!("Example text"): Prints text with a white background.
-
+```rs
+ bg_red_println!("Example text")
+ bg_green_println!("Example text") 
+ bg_yellow_println!("Example text")
+ bg_blue_println!("Example text")
+ bg_purple_println!("Example text")
+ bg_cyan_println!("Example text") 
+ bg_white_println!("Example text")
+```
 Bold Background Color Macros:
+```rs
+ bold_bg_red_println!("Example text")
+ bold_bg_green_println!("Example text")
+ bold_bg_yellow_println!("Example text")
+ bold_bg_blue_println!("Example text")
+ bold_bg_purple_println!("Example text")
+ bold_bg_cyan_println!("Example text")
+ bold_bg_white_println!("Example text")
+```
 
-- bold_bg_red_println!("Example text"): Prints text with a bold red background.
-- bold_bg_green_println!("Example text"): Prints text with a bold green background.
-- bold_bg_yellow_println!("Example text"): Prints text with a bold yellow background.
-- bold_bg_blue_println!("Example text"): Prints text with a bold blue background.
-- bold_bg_purple_println!("Example text"): Prints text with a bold purple background.
-- bold_bg_cyan_println!("Example text"): Prints text with a bold cyan background.
-- bold_bg_white_println!("Example text"): Prints text with a bold white background.
+
