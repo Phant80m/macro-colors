@@ -1,4 +1,356 @@
-pub use owo_colors::OwoColorize;
+pub trait Colorize {
+    // Regular colors
+    fn black(&self) -> String;
+    fn red(&self) -> String;
+    fn green(&self) -> String;
+    fn yellow(&self) -> String;
+    fn blue(&self) -> String;
+    fn magenta(&self) -> String;
+    fn cyan(&self) -> String;
+    fn white(&self) -> String;
+
+    // Bright colors
+    fn bright_black(&self) -> String;
+    fn bright_red(&self) -> String;
+    fn bright_green(&self) -> String;
+    fn bright_yellow(&self) -> String;
+    fn bright_blue(&self) -> String;
+    fn bright_magenta(&self) -> String;
+    fn bright_cyan(&self) -> String;
+    fn bright_white(&self) -> String;
+
+    // Background colors
+    fn on_black(&self) -> String;
+    fn on_red(&self) -> String;
+    fn on_green(&self) -> String;
+    fn on_yellow(&self) -> String;
+    fn on_blue(&self) -> String;
+    fn on_magenta(&self) -> String;
+    fn on_cyan(&self) -> String;
+    fn on_white(&self) -> String;
+
+    // Text styles
+    fn bold(&self) -> String;
+    fn italic(&self) -> String;
+}
+
+impl Colorize for String {
+    fn black(&self) -> String {
+        format!("\x1B[30m{}\x1B[0m", self)
+    }
+
+    fn red(&self) -> String {
+        format!("\x1B[31m{}\x1B[0m", self)
+    }
+
+    fn green(&self) -> String {
+        format!("\x1B[32m{}\x1B[0m", self)
+    }
+
+    fn yellow(&self) -> String {
+        format!("\x1B[33m{}\x1B[0m", self)
+    }
+
+    fn blue(&self) -> String {
+        format!("\x1B[34m{}\x1B[0m", self)
+    }
+
+    fn magenta(&self) -> String {
+        format!("\x1B[35m{}\x1B[0m", self)
+    }
+
+    fn cyan(&self) -> String {
+        format!("\x1B[36m{}\x1B[0m", self)
+    }
+
+    fn white(&self) -> String {
+        format!("\x1B[37m{}\x1B[0m", self)
+    }
+
+    fn bright_black(&self) -> String {
+        format!("\x1B[30;1m{}\x1B[0m", self)
+    }
+
+    fn bright_red(&self) -> String {
+        format!("\x1B[31;1m{}\x1B[0m", self)
+    }
+
+    fn bright_green(&self) -> String {
+        format!("\x1B[32;1m{}\x1B[0m", self)
+    }
+
+    fn bright_yellow(&self) -> String {
+        format!("\x1B[33;1m{}\x1B[0m", self)
+    }
+
+    fn bright_blue(&self) -> String {
+        format!("\x1B[34;1m{}\x1B[0m", self)
+    }
+
+    fn bright_magenta(&self) -> String {
+        format!("\x1B[35;1m{}\x1B[0m", self)
+    }
+
+    fn bright_cyan(&self) -> String {
+        format!("\x1B[36;1m{}\x1B[0m", self)
+    }
+
+    fn bright_white(&self) -> String {
+        format!("\x1B[37;1m{}\x1B[0m", self)
+    }
+
+    fn on_black(&self) -> String {
+        format!("\x1B[40m{}\x1B[0m", self)
+    }
+
+    fn on_red(&self) -> String {
+        format!("\x1B[41m{}\x1B[0m", self)
+    }
+
+    fn on_green(&self) -> String {
+        format!("\x1B[42m{}\x1B[0m", self)
+    }
+
+    fn on_yellow(&self) -> String {
+        format!("\x1B[43m{}\x1B[0m", self)
+    }
+
+    fn on_blue(&self) -> String {
+        format!("\x1B[44m{}\x1B[0m", self)
+    }
+
+    fn on_magenta(&self) -> String {
+        format!("\x1B[45m{}\x1B[0m", self)
+    }
+
+    fn on_cyan(&self) -> String {
+        format!("\x1B[46m{}\x1B[0m", self)
+    }
+
+    fn on_white(&self) -> String {
+        format!("\x1B[47m{}\x1B[0m", self)
+    }
+
+    fn bold(&self) -> String {
+        format!("\x1B[1m{}\x1B[0m", self)
+    }
+
+    fn italic(&self) -> String {
+        format!("\x1B[3m{}\x1B[0m", self)
+    }
+}
+
+impl<'a> Colorize for &'a str {
+    fn black(&self) -> String {
+        format!("\x1B[30m{}\x1B[0m", self)
+    }
+
+    fn red(&self) -> String {
+        format!("\x1B[31m{}\x1B[0m", self)
+    }
+
+    fn green(&self) -> String {
+        format!("\x1B[32m{}\x1B[0m", self)
+    }
+
+    fn yellow(&self) -> String {
+        format!("\x1B[33m{}\x1B[0m", self)
+    }
+
+    fn blue(&self) -> String {
+        format!("\x1B[34m{}\x1B[0m", self)
+    }
+
+    fn magenta(&self) -> String {
+        format!("\x1B[35m{}\x1B[0m", self)
+    }
+
+    fn cyan(&self) -> String {
+        format!("\x1B[36m{}\x1B[0m", self)
+    }
+
+    fn white(&self) -> String {
+        format!("\x1B[37m{}\x1B[0m", self)
+    }
+
+    fn bright_black(&self) -> String {
+        format!("\x1B[30;1m{}\x1B[0m", self)
+    }
+
+    fn bright_red(&self) -> String {
+        format!("\x1B[31;1m{}\x1B[0m", self)
+    }
+
+    fn bright_green(&self) -> String {
+        format!("\x1B[32;1m{}\x1B[0m", self)
+    }
+
+    fn bright_yellow(&self) -> String {
+        format!("\x1B[33;1m{}\x1B[0m", self)
+    }
+
+    fn bright_blue(&self) -> String {
+        format!("\x1B[34;1m{}\x1B[0m", self)
+    }
+
+    fn bright_magenta(&self) -> String {
+        format!("\x1B[35;1m{}\x1B[0m", self)
+    }
+
+    fn bright_cyan(&self) -> String {
+        format!("\x1B[36;1m{}\x1B[0m", self)
+    }
+
+    fn bright_white(&self) -> String {
+        format!("\x1B[37;1m{}\x1B[0m", self)
+    }
+
+    fn on_black(&self) -> String {
+        format!("\x1B[40m{}\x1B[0m", self)
+    }
+
+    fn on_red(&self) -> String {
+        format!("\x1B[41m{}\x1B[0m", self)
+    }
+
+    fn on_green(&self) -> String {
+        format!("\x1B[42m{}\x1B[0m", self)
+    }
+
+    fn on_yellow(&self) -> String {
+        format!("\x1B[43m{}\x1B[0m", self)
+    }
+
+    fn on_blue(&self) -> String {
+        format!("\x1B[44m{}\x1B[0m", self)
+    }
+
+    fn on_magenta(&self) -> String {
+        format!("\x1B[45m{}\x1B[0m", self)
+    }
+
+    fn on_cyan(&self) -> String {
+        format!("\x1B[46m{}\x1B[0m", self)
+    }
+
+    fn on_white(&self) -> String {
+        format!("\x1B[47m{}\x1B[0m", self)
+    }
+
+    fn bold(&self) -> String {
+        format!("\x1B[1m{}\x1B[0m", self)
+    }
+
+    fn italic(&self) -> String {
+        format!("\x1B[3m{}\x1B[0m", self)
+    }
+}
+
+impl<'a> Colorize for &'a mut str {
+    fn black(&self) -> String {
+        format!("\x1B[30m{}\x1B[0m", self)
+    }
+
+    fn red(&self) -> String {
+        format!("\x1B[31m{}\x1B[0m", self)
+    }
+
+    fn green(&self) -> String {
+        format!("\x1B[32m{}\x1B[0m", self)
+    }
+
+    fn yellow(&self) -> String {
+        format!("\x1B[33m{}\x1B[0m", self)
+    }
+
+    fn blue(&self) -> String {
+        format!("\x1B[34m{}\x1B[0m", self)
+    }
+
+    fn magenta(&self) -> String {
+        format!("\x1B[35m{}\x1B[0m", self)
+    }
+
+    fn cyan(&self) -> String {
+        format!("\x1B[36m{}\x1B[0m", self)
+    }
+
+    fn white(&self) -> String {
+        format!("\x1B[37m{}\x1B[0m", self)
+    }
+
+    fn bright_black(&self) -> String {
+        format!("\x1B[30;1m{}\x1B[0m", self)
+    }
+
+    fn bright_red(&self) -> String {
+        format!("\x1B[31;1m{}\x1B[0m", self)
+    }
+
+    fn bright_green(&self) -> String {
+        format!("\x1B[32;1m{}\x1B[0m", self)
+    }
+
+    fn bright_yellow(&self) -> String {
+        format!("\x1B[33;1m{}\x1B[0m", self)
+    }
+
+    fn bright_blue(&self) -> String {
+        format!("\x1B[34;1m{}\x1B[0m", self)
+    }
+
+    fn bright_magenta(&self) -> String {
+        format!("\x1B[35;1m{}\x1B[0m", self)
+    }
+
+    fn bright_cyan(&self) -> String {
+        format!("\x1B[36;1m{}\x1B[0m", self)
+    }
+
+    fn bright_white(&self) -> String {
+        format!("\x1B[37;1m{}\x1B[0m", self)
+    }
+
+    fn on_black(&self) -> String {
+        format!("\x1B[40m{}\x1B[0m", self)
+    }
+
+    fn on_red(&self) -> String {
+        format!("\x1B[41m{}\x1B[0m", self)
+    }
+
+    fn on_green(&self) -> String {
+        format!("\x1B[42m{}\x1B[0m", self)
+    }
+
+    fn on_yellow(&self) -> String {
+        format!("\x1B[43m{}\x1B[0m", self)
+    }
+
+    fn on_blue(&self) -> String {
+        format!("\x1B[44m{}\x1B[0m", self)
+    }
+
+    fn on_magenta(&self) -> String {
+        format!("\x1B[45m{}\x1B[0m", self)
+    }
+
+    fn on_cyan(&self) -> String {
+        format!("\x1B[46m{}\x1B[0m", self)
+    }
+
+    fn on_white(&self) -> String {
+        format!("\x1B[47m{}\x1B[0m", self)
+    }
+
+    fn bold(&self) -> String {
+        format!("\x1B[1m{}\x1B[0m", self)
+    }
+
+    fn italic(&self) -> String {
+        format!("\x1B[3m{}\x1B[0m", self)
+    }
+}
 
 #[macro_export]
 macro_rules! red_println {
